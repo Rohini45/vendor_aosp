@@ -194,7 +194,7 @@ $(call inherit-product, vendor/aosp/config/branding.mk)
 $(call inherit-product, vendor/aosp/config/ota.mk)
 
 # GApps
-#$(call inherit-product, vendor/gapps/config.mk)
+$(call inherit-product, vendor/gapps/config.mk)
 
 # Audio
 $(call inherit-product, vendor/aosp/config/audio.mk)
