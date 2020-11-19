@@ -187,14 +187,44 @@ PRODUCT_PRODUCT_PROPERTIES += \
 #    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 #endif
 
+
+# Apex
+ifeq ($(TARGET_FLATTEN_APEX),false)
+$(call inherit-product, vendor/aosp/config/apex.mk)
+else
+# Hide "Google Play System Updates" if Apex disabled
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    vendor/aosp/overlay_apex_disabled
+
+DEVICE_PACKAGE_OVERLAYS += \
+    vendor/aosp/overlay_apex_disabled/common
+endif
+
+# Audio
+$(call inherit-product, vendor/aosp/config/audio.mk)
+
+# Bootanimation
+$(call inherit-product, vendor/aosp/config/bootanimation.mk)
+
 # Branding
 $(call inherit-product, vendor/aosp/config/branding.mk)
+
+# CarrierSettings
+$(call inherit-product, vendor/aosp/config/carrier_settings.mk)
+
+# Fonts
+$(call inherit-product, vendor/aosp/config/fonts.mk)
+
+# GApps
+$(call inherit-product, vendor/gapps/config.mk)
 
 # OTA
 $(call inherit-product, vendor/aosp/config/ota.mk)
 
-# GApps
-$(call inherit-product, vendor/gapps/config.mk)
+# RRO Overlays
+$(call inherit-product, vendor/aosp/config/rro_overlays.mk)
+
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
 
 # Audio
 $(call inherit-product, vendor/aosp/config/audio.mk)
