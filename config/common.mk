@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= PixelExperience
+PRODUCT_BRAND ?= RohieOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -196,7 +196,6 @@ endif
 #    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 #endif
 
-
 # Apex
 $(call inherit-product, vendor/aosp/config/apex.mk)
 
@@ -223,22 +222,5 @@ $(call inherit-product, vendor/aosp/config/ota.mk)
 
 # RRO Overlays
 $(call inherit-product, vendor/aosp/config/rro_overlays.mk)
-
--include $(WORKSPACE)/build_env/image-auto-bits.mk
-
-# Audio
-$(call inherit-product, vendor/aosp/config/audio.mk)
-
-# Fonts
-$(call inherit-product, vendor/aosp/config/fonts.mk)
-
-# CarrierSettings
-$(call inherit-product, vendor/aosp/config/carrier_settings.mk)
-
-# RRO Overlays
-$(call inherit-product, vendor/aosp/config/rro_overlays.mk)
-
-# Apex
-$(call inherit-product, vendor/aosp/config/apex.mk)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
