@@ -18,7 +18,7 @@ CUSTOM_PLATFORM_VERSION := 11
 
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(CUSTOM_BUILD))
 
-CUSTOM_VERSION := RohieOS_$(CUSTOM_BUILD)-$(ROHIE_VERSION)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(ROHIE_BUILD_TYPE)
+CUSTOM_VERSION := RohieOS_$(CUSTOM_BUILD)-$(ROHIE_VERSION)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)
 CUSTOM_VERSION_PROP := r
 
 PRODUCT_GENERIC_PROPERTIES += \
@@ -27,7 +27,6 @@ PRODUCT_GENERIC_PROPERTIES += \
     org.rohie.version.display=$(ROHIE_VERSION) \
     org.rohie.build_version=$(ROHIE_BASE_VERSION) \
     org.rohie.build_date=$(CUSTOM_BUILD_DATE) \
-    org.rohie.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
     org.rohie.build_type=$(ROHIE_BUILD_TYPE) \
     org.rohie.build_maintainer=$(ROHIE_MAINTAINER)
 
