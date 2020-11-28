@@ -1,8 +1,7 @@
 ifeq ($(TARGET_FLATTEN_APEX),false)
 # Overlay
 PRODUCT_PACKAGES += \
-    ApexOverlay \
-    ApexSettingsOverlay
+    ApexOverlay
 
 # Enable Google Play system updates support
 PRODUCT_SOONG_NAMESPACES += \
@@ -15,7 +14,6 @@ PRODUCT_PACKAGES += \
 # Google Apexes
 PRODUCT_PACKAGES += \
     com.google.android.adbd \
-    com.google.android.cellbroadcast \
     com.google.android.conscrypt \
     com.google.android.extservices \
     com.google.android.ipsec \
