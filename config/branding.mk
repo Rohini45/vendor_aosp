@@ -2,6 +2,7 @@
 ROHIE_BASE_VERSION := CatX
 ROHIE_VERSION := Beta
 ROHIE_MAINTAINER ?= Unknown
+ROHIE_DONATE_URL ?= Unknown
 
 # Set all versions
 ROHIE_BUILD_TYPE ?= UNOFFICIAL
@@ -22,11 +23,12 @@ CUSTOM_VERSION := RohieOS_$(CUSTOM_BUILD)-$(ROHIE_VERSION)-$(CUSTOM_PLATFORM_VER
 CUSTOM_VERSION_PROP := r
 
 PRODUCT_GENERIC_PROPERTIES += \
-    org.rohie.version=$(ROHIE_VERSION) \
+    org.rohie.version=$(ROHIE_BASE_VERSION) \
     org.rohie.version.prop=$(CUSTOM_VERSION_PROP) \
     org.rohie.version.display=$(ROHIE_VERSION) \
     org.rohie.build_version=$(ROHIE_BASE_VERSION) \
     org.rohie.build_date=$(CUSTOM_BUILD_DATE) \
     org.rohie.build_type=$(ROHIE_BUILD_TYPE) \
-    org.rohie.build_maintainer=$(ROHIE_MAINTAINER)
+    org.rohie.build_maintainer=$(ROHIE_MAINTAINER) \
+    org.rohie.build_donate_url=$(ROHIE_DONATE_URL)
 
