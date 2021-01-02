@@ -1,6 +1,4 @@
-# Copyright (C) 2017 Unlegacy-Android
-# Copyright (C) 2017,2020 The LineageOS Project
-# Copyright (C) 2018,2020 The PixelExperience Project
+# Copyright (C) 2020 The RohieOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,11 +13,14 @@
 # limitations under the License.
 
 CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CUSTOM_VERSION).zip
-
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
-.PHONY: bacon
-bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
+.PHONY: rohie
+rohie: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(MD5) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).md5sum
+	@echo -e "\t =============================================================================================================="
 	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)" >&2
+	@echo -e "\t RohieOS - Meow or Never"
+	@echo -e "\t =============================================================================================================="
+
