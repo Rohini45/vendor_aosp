@@ -214,9 +214,6 @@ $(call inherit-product, vendor/aosp/config/branding.mk)
 # CarrierSettings
 $(call inherit-product, vendor/aosp/config/carrier_settings.mk)
 
-# Flipendo
-include vendor/aosp/config/system_sepolicy.mk
-
 # Fonts
 $(call inherit-product, vendor/aosp/config/fonts.mk)
 
